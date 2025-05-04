@@ -22,8 +22,8 @@ function parse_body(body) {
 		}).toArray();
 		stops.push(stop);
 	});
-	var vehicles = $(".departures-table__cell img").map(function () {
-		return $(this).attr("alt")
+	var vehicles = $(".departures-table__cell .tt-icon-dep").map(function () {
+		return $(this).text().trim().replace("û", "tramvaj").replace("÷", "autobus").replace("ý", "trolejbus")
 	});
 	var delays = $(".cell-delay").map(function () {
 		return $(this).find(".delay-bubble").text().replace(/[^0-9]/g, "").replace(/^$/, "0")
